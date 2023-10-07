@@ -1,13 +1,13 @@
 package application.fx1;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class Main extends Application{
+public class Main extends Application {
 
-	
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -15,14 +15,15 @@ public class Main extends Application{
 	@Override
 	public void start(Stage stage) throws Exception {
 		try {
-			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root, 400,400);
+			Parent root = FXMLLoader.load(getClass()
+					.getResource("/application/gui/View.fxml"));
+			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }
