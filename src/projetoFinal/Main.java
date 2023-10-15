@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	String caminho = "/projetoFinal/gui/MainView.fxml";
+	
+	private static Scene mainScene;
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -22,14 +25,17 @@ public class Main extends Application {
 			root.setFitToHeight(true);
 			root.setFitToWidth(true);
 			
-			Scene scene = new Scene(root);
-			stage.setScene(scene);
+			mainScene= new Scene(root);
+			stage.setScene(mainScene);
 			stage.setTitle("Projeto JavaFx Simples");
 			stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
+	}
+	public static Scene getMainScene() {
+		return mainScene;
 	}
 
 }
