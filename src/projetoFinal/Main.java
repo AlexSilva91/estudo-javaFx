@@ -8,9 +8,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	String caminho = "/projetoFinal/gui/MainView.fxml";
-	
+
 	private static Scene mainScene;
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -18,14 +18,12 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		try {
-			ScrollPane root = FXMLLoader
-					.load(getClass()
-					.getResource(caminho));
-			
+			ScrollPane root = FXMLLoader.load(getClass().getResource(caminho));
+
 			root.setFitToHeight(true);
 			root.setFitToWidth(true);
-			
-			mainScene= new Scene(root);
+
+			mainScene = new Scene(root);
 			stage.setScene(mainScene);
 			stage.setTitle("Projeto JavaFx Simples");
 			stage.show();
@@ -34,6 +32,7 @@ public class Main extends Application {
 		}
 
 	}
+
 	public static Scene getMainScene() {
 		return mainScene;
 	}
